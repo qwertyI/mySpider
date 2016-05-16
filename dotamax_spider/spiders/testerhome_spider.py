@@ -18,6 +18,7 @@ class TesterhomeSpider(scrapy.spiders.Spider):
             item['topic_author'] = sel.xpath('div/div[contains(@class,"info")]/a/@data-name').extract()
             item['topic_class'] = sel.xpath('div/div[contains(@class,"info")]/a[contains(@class,"node")]/text()').extract()
             item['topic_reply_num'] = sel.xpath('div[contains(@class,"count media-right")]/a/text()').extract()
+            item['topic_author_img'] = sel.xpath('div/a/img/@src').extract()
             yield item
         # l = ItemLoader(item=item, response=response)
         # l.add_xpath('topic_title', '//div/div/div[contains(@class,"title media-heading")]/a/text()')

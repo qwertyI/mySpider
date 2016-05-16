@@ -19,6 +19,7 @@ class TesterhomeSpiderPipeline(object):
     def process_item(self, item, spider):
         my_topic = Testerhome_Topic(topic_title=item['topic_title'][0].encode('unicode-escape'),
                                     topic_author=item['topic_author'][0].encode('unicode-escape'),
+                                    topic_author_img=item['topic_author_img'][0].encode('unicode-escape'),
                                     topic_class=item['topic_class'][0].encode('unicode-escape'),
                                     topic_reply_num=item['topic_reply_num'][0].encode('unicode-escape'),
                                     spider_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))

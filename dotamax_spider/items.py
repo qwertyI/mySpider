@@ -16,5 +16,6 @@ class DotamaxSpiderItem(scrapy.Item):
 class TesterhomeSpiderItem(scrapy.Item):
     topic_title = scrapy.Field()
     topic_author = scrapy.Field()
+    topic_author_img = scrapy.Field()
     topic_class = scrapy.Field()
     topic_reply_num = scrapy.Field()
