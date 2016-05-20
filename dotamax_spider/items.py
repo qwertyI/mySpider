@@ -19,3 +19,17 @@ class TesterhomeSpiderItem(scrapy.Item):
     topic_author_img = scrapy.Field()
     topic_class = scrapy.Field()
     topic_reply_num = scrapy.Field()
+
+class TesterhomeDetailSpiderItem(scrapy.Item):
+    topic_title =scrapy.Field()
+    topic_body =scrapy.Field()
+    topic_author =scrapy.Field()
+    topic_timeago =scrapy.Field()
+    topic_like_num =scrapy.Field()
+    topic_reply_num =scrapy.Field()
+
+class TesterhomeDetailReplySpiderItem(scrapy.Item):
+    topic_reply_author = scrapy.Field()
+    topic_reply_timeago = scrapy.Field()
+    topic_reply_body = scrapy.Field()
+    topic_reply_like_num = scrapy.Field()
