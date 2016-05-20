@@ -21,6 +21,7 @@ class TesterhomeSpiderItem(scrapy.Item):
     topic_reply_num = scrapy.Field()
 
 class TesterhomeDetailSpiderItem(scrapy.Item):
+    topic_id = scrapy.Field()
     topic_title =scrapy.Field()
     topic_body =scrapy.Field()
     topic_author =scrapy.Field()

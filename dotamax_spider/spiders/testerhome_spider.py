@@ -11,7 +11,7 @@ class TesterhomeSpider(scrapy.spiders.Spider):
     start_urls = [
         'http://testerhome.com'
     ]
-    pipeline = set([])
+    pipeline = set([pipelines.TesterhomeSpiderPipeline])
 
     def parse(self, response):
         for sel in response.xpath('//div[contains(@class,"topic media topic")]'):

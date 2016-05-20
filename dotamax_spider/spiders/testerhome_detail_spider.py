@@ -1,5 +1,6 @@
 import scrapy
 from dotamax_spider.items import TesterhomeSpiderItem, TesterhomeDetailSpiderItem, TesterhomeDetailReplySpiderItem
+from dotamax_spider import pipelines
 from scrapy.contrib.loader import ItemLoader
 import re
 
@@ -10,9 +11,13 @@ class TesterhomeDetailSpider(scrapy.spiders.Spider):
     start_urls = [
         'http://testerhome.com/topics/50'
     ]
+    pipeline=set([
+        pipelines.TesterhomeSpiderDetailPipeline
+    ])
 
     def parse(self, response):
         itemdetail = TesterhomeDetailSpiderItem()
+        itemdetail['topic_id'] = response.xpath('//a[contains(@class, "likeable")]/@data-id').extract()[0]
         itemdetail['topic_title'] = response.xpath('//div[contains(@class, "media-body")]/h1/text()').extract()[0]
         topic_body = ''
         for i in response.xpath('//div[contains(@class, "panel-body markdown")]/article/p/text()').extract():
