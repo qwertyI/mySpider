@@ -1,5 +1,6 @@
 import scrapy
 from dotamax_spider.items import TesterhomeSpiderItem
+from dotamax_spider import pipelines
 from scrapy.contrib.loader import ItemLoader
 import re
 
@@ -10,6 +11,7 @@ class TesterhomeSpider(scrapy.spiders.Spider):
     start_urls = [
         'http://testerhome.com'
     ]
+    pipeline = set([])
 
     def parse(self, response):
         for sel in response.xpath('//div[contains(@class,"topic media topic")]'):
