@@ -29,7 +29,7 @@ class Testerhome_Topic(Base):
         return "<Topic(topic_title='%s', topic_author='%s', topic_class='%s', topic_reply_num='%s')>" % (
         self.topic_title, self.topic_author, self.topic_class, self.topic_reply_num)
 
-class Testerhome_Detail(Base):
+class Topic_Detail(Base):
     __tablename__ = 'topic_detail'
 
     id = Column(INT, primary_key=True, unique=True, autoincrement=True)
