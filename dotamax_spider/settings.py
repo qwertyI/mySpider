@@ -17,6 +17,7 @@ NEWSPIDER_MODULE = 'dotamax_spider.spiders'
 
 ITEM_PIPELINES = {
     'dotamax_spider.pipelines.TesterhomeSpiderPipeline': 300,
+    'dotamax_spider.pipelines.TesterhomeSpiderDetailPipeline': 300,
 }
 
 engine = create_engine('mysql+mysqldb://root:111111@localhost:33/testerhome?charset=utf8',echo=True)
